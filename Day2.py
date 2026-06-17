@@ -22,4 +22,27 @@ for i in range(len(val)):
 # 2 value soo on whole for num in val: will give output 
 # value 
 # value 
-# #value     
+# #value 
+
+
+#Take n numbers as input and print only the even numbers from the list
+# and now to count no of even nos in this 
+n = int(input('enter the no of elements'))
+ff = list(map(int,input('enter the values').split()))[:n]
+count = 0
+for va in ff:
+    if va % 2 == 0 :
+        print(va)
+        count +=1
+print(count)
+
+# another method for this is 
+ n = int(input('enter the no of elements'))
+ ff = []
+ for i in range(n):
+    num = int(input('enter the num'))
+    ff.append(num)
+ for va in ff:
+    if va % 2 == 0 :
+        print(va)
+   
