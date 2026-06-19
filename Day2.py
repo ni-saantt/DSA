@@ -1,6 +1,6 @@
 #find largest no 
 num = list(map(int,input('enter the number').split()))
-laregst = nums[0]
+largest = num[0]
 
 for nu in num:
     if nu>largest:
@@ -37,12 +37,12 @@ for va in ff:
 print(count)
 
 # another method for this is 
- n = int(input('enter the no of elements'))
- ff = []
- for i in range(n):
+n = int(input('enter the no of elements'))
+ff = []
+for i in range(n):
     num = int(input('enter the num'))
     ff.append(num)
- for va in ff:
+for va in ff:
     if va % 2 == 0 :
         print(va)
    
