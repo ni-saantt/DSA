@@ -1,3 +1,8 @@
+#notes : list(map(int,input('enter the values').split()))
+# using for _ in array name 
+
+
+
 #find largest no 
 num = list(map(int,input('enter the number').split()))
 largest = num[0]
