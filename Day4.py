@@ -1,24 +1,24 @@
-# 2 sum problems - if we need to find index not numbers and array is not sorted we will use basic mwthod of hash map 
-# if array iss sorted , or numbers are asked we will use 2 pointer 
+# Day4 - Even number utilities.
 
-#so lets first solve by 2 pointer  when we need numbers or array is already sorted
-nums.sort() #only do when we need numbers not the index
-left,right = 0, len(nums)-1 
+"""
+Utilities for handling even numbers in a list.
+"""
 
-while left < right :
-    total = nums[left] + nums[right]
-    if  total < target:
-        left += 1
-    elif total > target:
-        right -=1
-    else :
-        return[nums[left],nums[right]]       
+class EvenCounter:
+    """Provides methods to filter even numbers and count them."""
 
-#another method if it was not sorted and we wanted index were hashmap
-#store = {}
-#for i in range(len(nums)):
-#    req = target - nums[i]
-#    if req in store:
-#        return[store[req],i]
-#    else :
-#        store[nums[i]] = i
+    @staticmethod
+    def get_evens(nums: list[int]) -> list[int]:
+        """Return a list of even numbers from the input list."""
+        return [num for num in nums if num % 2 == 0]
+
+    @staticmethod
+    def count_evens(nums: list[int]) -> int:
+        """Return the count of even numbers in the input list."""
+        return len(EvenCounter.get_evens(nums))
+
+if __name__ == "__main__":
+    numbers = list(map(int, input("Enter numbers separated by space: ").split()))
+    evens = EvenCounter.get_evens(numbers)
+    print("Evens:", evens)
+    print("Count:", EvenCounter.count_evens(numbers))

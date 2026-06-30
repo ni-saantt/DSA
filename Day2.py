@@ -1,53 +1,41 @@
-#notes : list(map(int,input('enter the values').split()))
-# using for _ in array name 
+# Day2 - Number processing utilities.
 
+"""
+Day2 - Number processing utilities.
+"""
 
+class NumberProcessor:
+    """Encapsulates various number processing operations."""
 
-#find largest no 
-num = list(map(int,input('enter the number').split()))
-largest = num[0]
+    @staticmethod
+    def find_largest(nums: list[int]) -> int:
+        """Return the largest number in the list."""
+        if not nums:
+            raise ValueError("Empty list provided")
+        largest = nums[0]
+        for nu in nums[1:]:
+            if nu > largest:
+                largest = nu
+        return largest
 
-for nu in num:
-    if nu>largest:
-        largest = nu
-print(largest)
+    @staticmethod
+    def print_numbers(nums: list[int]) -> None:
+        """Print each number in the list."""
+        for num in nums:
+            print(num)
 
+    @staticmethod
+    def even_numbers(nums: list[int]) -> tuple[list[int], int]:
+        """Return a list of even numbers and their count."""
+        evens = [num for num in nums if num % 2 == 0]
+        for ev in evens:
+            print(ev)
+        return evens, len(evens)
 
-#print numbers using a loop 
-val = list(map(int,input('enter the values').split()))
-for i in range(len(val)):
-    print(val[i])
-#or we can do this in other way
-# like 
-# for num in val:
-# print(num)
-#What's the difference? in both so  for i in loop give output 
-# 0 vale 
-# 1 value 
-# 2 value soo on whole for num in val: will give output 
-# value 
-# value 
-# #value 
-
-
-#Take n numbers as input and print only the even numbers from the list
-# and now to count no of even nos in this 
-n = int(input('enter the no of elements'))
-ff = list(map(int,input('enter the values').split()))[:n]
-count = 0
-for va in ff:
-    if va % 2 == 0 :
-        print(va)
-        count +=1
-print(count)
-
-# another method for this is 
-n = int(input('enter the no of elements'))
-ff = []
-for i in range(n):
-    num = int(input('enter the num'))
-    ff.append(num)
-for va in ff:
-    if va % 2 == 0 :
-        print(va)
-   
+if __name__ == "__main__":
+    numbers = list(map(int, input("Enter numbers separated by space: ").split()))
+    print("Largest:", NumberProcessor.find_largest(numbers))
+    print("All numbers:")
+    NumberProcessor.print_numbers(numbers)
+    evens, count = NumberProcessor.even_numbers(numbers)
+    print("Count of evens:", count)
